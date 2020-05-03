@@ -1,0 +1,14 @@
+const byte SensorPort  =  IN_1;
+#define ADDR     0x22
+
+#include "IMU-lib.nxc"
+
+task main()
+{
+
+	IMU_Init(SensorPort);
+	Wait(100);
+	IMU_ResetAllCalibrations(SensorPort, ADDR);
+	Wait(500);
+
+}
